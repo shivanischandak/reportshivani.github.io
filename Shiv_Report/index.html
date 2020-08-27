@@ -1,0 +1,90 @@
+<html>
+  <center><h1> Name: Pratik D <p>
+  <h2>
+    ID:S554-560-755 <p>
+    email:pat@gmail.com<p>
+    Appeared on: 07/28/2020<p>
+    Proficiency: Intermediate
+    </center>
+    </h2>    
+</h1>
+<style>
+  body {
+    background-color: coral;
+  }
+  </style>
+<head>
+
+<title>Google Charts - Easy Tutorials</title>
+<link rel="stylesheet" href="style.css">
+
+
+    <section class = "parent">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Section', 'Score'],
+          ['Spellings', 2],
+          ['Sentence Formation and completion', 1],
+          ['Fundamentals of grammar', 4],
+          ['Ordering of words', 1],
+          
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    
+    </script>
+  </head>
+
+
+  <head>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Element", "Density", { role: "style" } ],
+          ["Spellings", 40, "#b87333"],
+          ["Sentence formation and completion", 20, "silver"],
+          ["Fundamentals of grammer", 80, "gold"],
+          ["Ordering of words", 20, "color: #e5e4e2"]
+        ]);
+  
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                         { calc: "stringify",
+                           sourceColumn: 1,
+                           type: "string",
+                           role: "annotation" },
+                         2]);
+  
+        var options = {
+          title: "Learning Status",
+          width: 600,
+          height: 400,
+          bar: {groupWidth: "95%"},
+          legend: { position: "none" },
+        };
+        var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+        chart.draw(view, options);
+    }
+    </script>
+    </head>
+
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px; position: absolute ; padding-top: 0vw; padding-left: 35vw;"></div>
+    <div id="barchart_values" style="width: 900px; height: 300px; position: relative; padding-top: 0vw; padding-left: 0vw;"></div>
+  </body>
+</html>
